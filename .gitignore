@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# uv
+.venv/
+uv.lock
+
+# Notebooks
+.ipynb_checkpoints/
+notebooks/*-Copy*.ipynb
+# Jupytext-paired ipynb mirrors of .py walkthroughs (the .py is the source of truth)
+notebooks/00_code_walkthrough.ipynb
+
+# Local data + cache
+cache/
+data/
+*.parquet
+*.csv.cache
+
+# Env / secrets
+.env
+.env.local
+*.secret
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Rendered primer PDFs (source markdown is the source of truth)
+primer/*.pdf
