@@ -67,7 +67,6 @@ uv run python scripts/buy_side_fingerprint.py      # detailed side-asymmetry ana
 - `src/challenge/sources/` is one adapter per data source. CSVs go through `csv_loader.py`; Kraken and Binance REST adapters live in `comparison_venues.py`. All emit the canonical `(ts, price, qty, side)` schema.
 - `src/challenge/analysis/` is the detection layer. `manipulation.py` (Kyle's λ, round-trip rate, top-N size share, buy/sell ratio, inter-arrival), `anomaly.py` (volume z-score, burst score), `plot.py` (chart helpers).
 - `src/challenge/io/cache.py` is a read-through parquet cache for the comparison-venue pulls (slow and rate-limited; cache once, iterate locally).
-- `notebooks/00_code_walkthrough.py` is a paired Jupytext walkthrough through every function, with the source inlined via `inspect.getsource` so you can read the analysis end to end without flipping between files. Open the `.ipynb` for the rendered view.
 - `scripts/` has the analysis entry points: comparison-venue pulls, provisional chart generation, the cross-venue table, and the side-asymmetry deep dive.
 - `tests/` has fast unit tests on the detection primitives.
 
@@ -80,4 +79,4 @@ uv run python scripts/buy_side_fingerprint.py      # detailed side-asymmetry ana
 
 ## Status
 
-Analysis layer, comparison-venue adapters, cross-venue metrics table, provisional charts, and the code walkthrough notebook are in. Next up: a formal investigation notebook with finalized chart styling and the report markdown.
+Analysis layer, comparison-venue adapters, cross-venue metrics table, and provisional charts are in. Next up: a formal investigation notebook with finalized chart styling and the report markdown.
